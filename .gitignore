@@ -9,3 +9,7 @@ datasets/
 *.tar
 .DS_Store
 .git/
+static/uploads/*
+static/outputs/*
+!static/uploads/.gitkeep
+!static/outputs/.gitkeepgit git
