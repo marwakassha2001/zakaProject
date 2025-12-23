@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pen & Book Detector</title>
+</head>
+<body>
+    <h1>Pen & Book Detector</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if result_image_url %}
+        <h2>Result:</h2>
+        <img src="{{ result_image_url }}" alt="Result image" style="max-width: 400px;">
+        <h3>Detections:</h3>
+        <ul>
+            {% for d in detections %}
+                <li>{{ d }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
